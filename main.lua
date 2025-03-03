@@ -18,7 +18,7 @@ local tab = Main:CreateTab("Cheats")
 local tab2 = Main:CreateTab("Misc")
 local tab3 = Main:CreateTab("Player")
 
-tab:CreateButton("Hi",function()
+tab:CreateButton("Zi",function()
 loadModule("https://raw.githubusercontent.com/V123VI/roblo/refs/heads/main/module1.lua")
 end)
 
