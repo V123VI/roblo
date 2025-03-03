@@ -1,3 +1,15 @@
+---carregar modulos
+
+local function loadModule(url)
+    local success, err = pcall(function()
+        loadstring(game:HttpGet(url))()
+    end)
+    if not success then
+        warn("Falha ao carregar o módulo: " .. err)
+    end
+end
+---------------------------------------
+
 local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ShaddowScripts/Main/main/Library"))()
 
 local Main = library:CreateWindow("Main","Crimson")
@@ -7,7 +19,7 @@ local tab2 = Main:CreateTab("Misc")
 local tab3 = Main:CreateTab("Player")
 
 tab:CreateButton("Hi",function()
-print("clicked")
+loadModule("https://raw.githubusercontent.com/V123VI/roblo/refs/heads/main/module1.lua")
 end)
 
 tab:CreateToggle("Farm",function(a)
