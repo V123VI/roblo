@@ -1,9 +1,7 @@
-
 game.HttpService.HttpEnabled = true
 
 -- Função para carregar módulos remotamente
 local function loadModule(url)
-    
     local success, result = pcall(function()
         return loadstring(game:HttpGet(url))()
     end)
@@ -61,10 +59,19 @@ tab3:CreateToggle("Velocidade", function(ativado)
     end
 end)
 
-tab3:CreateToggle("Voar",function(ativado)
-if moduloplayer and moduloplayer.voar then
-    moduloplayer.voar(ativado)
-)
+-- Toggle para ativar/desativar voar
+tab3:CreateToggle("Voar", function(ativado)
+    if moduloplayer and moduloplayer.voar then
+        moduloplayer.voar(ativado)
+        if ativado then
+            print("Voar ativado!")
+        else
+            print("Voar desativado!")
+        end
+    else
+        warn("Módulo do Player não foi carregado corretamente ou a função não existe.")
+    end
+end)
 
 -- Outros elementos da interface
 tab:CreateButton("Zi", function()
