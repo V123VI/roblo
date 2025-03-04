@@ -1,5 +1,3 @@
-
-
 -- Função para carregar módulos
 local function loadModule(url)
     local success, err = pcall(function()
@@ -22,39 +20,35 @@ local tab = Main:CreateTab("Cheats")
 local tab2 = Main:CreateTab("Misc")
 local tab3 = Main:CreateTab("Player")
 
--- Variável para armazenar o módulo carregado
-----------------------
----MODULUOS PARA CARREGAR 
+-- Carregar os módulos
+local modulo1 = loadModule("https://raw.githubusercontent.com/V123VI/roblo/main/module1.lua")
+local moduloplayer = loadModule("https://raw.githubusercontent.com/V123VI/roblo/main/LocalP.lua")
 
--- Carregar o módulo ao iniciar o script
-modulo1 = loadModule("https://raw.githubusercontent.com/V123VI/roblo/refs/heads/main/module1.lua")
-
--------Modulo do Player
-
-moduloplayer = loadModule("https://raw.githubusercontent.com/V123VI/roblo/refs/heads/main/LocalP.lua")
-
-------------
-local modulo1
-
-
+-- Verificar se os módulos foram carregados corretamente
+if not modulo1 then
+    warn("Módulo 1 não foi carregado corretamente.")
+end
+if not moduloplayer then
+    warn("Módulo do Player não foi carregado corretamente.")
+end
 
 -- Toggle para ativar/desativar a velocidade
 tab3:CreateToggle("Velocidade", function(ativado)
-    if modulo1 then
-        modulo1.aumentarVelocidade(ativado) -- Chama a função do módulo
+    if moduloplayer then
+        moduloplayer.aumentarVelocidade(ativado) -- Chama a função do módulo do player
         if ativado then
             print("Velocidade aumentada ativada!")
         else
             print("Velocidade aumentada desativada!")
         end
     else
-        warn("Módulo de velocidade não foi carregado corretamente.")
+        warn("Módulo do Player não foi carregado corretamente.")
     end
 end)
 
 -- Outros elementos da interface
 tab:CreateButton("Zi", function()
-    loadModule("https://raw.githubusercontent.com/V123VI/roblo/refs/heads/main/module1.lua")
+    loadModule("https://raw.githubusercontent.com/V123VI/roblo/main/module1.lua")
 end)
 
 tab:CreateToggle("Farm", function(a)
