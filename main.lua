@@ -1,4 +1,4 @@
-game.HttpService.HttpEnabled = true
+
 
 -- Função para carregar módulos remotamente
 local function loadModule(url)
