@@ -1,4 +1,4 @@
--- Certifique-se de que o HttpService está ativado
+
 game.HttpService.HttpEnabled = true
 
 -- Função para carregar módulos remotamente
@@ -34,12 +34,10 @@ local tab2 = Main:CreateTab("Misc")
 local tab3 = Main:CreateTab("Player")
 
 -- URLs dos módulos
-local module1URL = "https://raw.githubusercontent.com/V123VI/roblo/main/module1.lua"
-local playerModuleURL = "https://raw.githubusercontent.com/V123VI/roblo/main/LocalP.lua"
 
 -- Carregar os módulos
-local modulo1 = loadModule(module1URL)
-local moduloplayer = loadModule(playerModuleURL)
+local modulo1 = loadModule("https://raw.githubusercontent.com/V123VI/roblo/main/module1.lua")
+local moduloplayer = loadModule("https://raw.githubusercontent.com/V123VI/roblo/main/LocalP.lua")
 
 -- Verificar se os módulos foram carregados corretamente
 if not modulo1 then
@@ -62,6 +60,11 @@ tab3:CreateToggle("Velocidade", function(ativado)
         warn("Módulo do Player não foi carregado corretamente ou a função não existe.")
     end
 end)
+
+tab3:CreateToggle("Voar",function(ativado)
+if moduloplayer and moduloplayer.voar then
+    moduloplayer.voar(ativado)
+)
 
 -- Outros elementos da interface
 tab:CreateButton("Zi", function()
