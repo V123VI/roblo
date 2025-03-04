@@ -9,7 +9,7 @@ function module.aumentarVelocidade(ativado)
 
     if humanoid then
         if ativado then
-            humanoid.WalkSpeed = 50 -- Velocidade aumentada
+            humanoid.WalkSpeed = 500 -- Velocidade aumentada
             print("Velocidade aumentada ativada! WalkSpeed:", humanoid.WalkSpeed)
         else
             humanoid.WalkSpeed = 16 -- Velocidade padrão
