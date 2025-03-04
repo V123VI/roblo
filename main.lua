@@ -1,4 +1,5 @@
-
+-- main.lua
+game.HttpService.HttpEnabled = true
 
 -- Função para carregar módulos remotamente
 local function loadModule(url)
@@ -31,16 +32,10 @@ local tab = Main:CreateTab("Cheats")
 local tab2 = Main:CreateTab("Misc")
 local tab3 = Main:CreateTab("Player")
 
--- URLs dos módulos
-
 -- Carregar os módulos
-local modulo1 = loadModule("https://raw.githubusercontent.com/V123VI/roblo/main/module1.lua")
 local moduloplayer = loadModule("https://raw.githubusercontent.com/V123VI/roblo/main/LocalP.lua")
 
 -- Verificar se os módulos foram carregados corretamente
-if not modulo1 then
-    warn("Módulo 1 não foi carregado corretamente.")
-end
 if not moduloplayer then
     warn("Módulo do Player não foi carregado corretamente.")
 end
@@ -48,7 +43,7 @@ end
 -- Toggle para ativar/desativar a velocidade
 tab3:CreateToggle("Velocidade", function(ativado)
     if moduloplayer and moduloplayer.aumentarVelocidade then
-        moduloplayer.aumentarVelocidade(ativado) -- Chama a função do módulo do player
+        moduloplayer.aumentarVelocidade(ativado)
         if ativado then
             print("Velocidade aumentada ativada!")
         else

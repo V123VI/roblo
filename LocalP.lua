@@ -22,7 +22,7 @@ end
 
 -- Função para voar
 -- LocalP.lua
-local module = {}
+
 
 -- Função para voar
 local flying = false
