@@ -1,4 +1,5 @@
 -- Função para carregar módulos
+-- Função para carregar módulos
 local function loadModule(url)
     local success, err = pcall(function()
         return loadstring(game:HttpGet(url))()
@@ -9,8 +10,9 @@ local function loadModule(url)
     end
 end
 
+
 -- Carregar a biblioteca de interface
-local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ShaddowScripts/Main/main/Library"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ShaddowScripts/Main/main/Library"))()
 
 -- Criar a janela principal
 local Main = library:CreateWindow("Main", "Crimson")
@@ -54,14 +56,13 @@ end)
 
 -- Outros elementos da interface
 tab:CreateButton("Zi", function()
-    loadModule("https://raw.githubusercontent.com/V123VI/roblo/main/module1.lua")
 end)
 
 tab:CreateToggle("Farm", function(a)
     print(a)
 end)
 
-tab:CreateSlider("Wow", 1, 16, function(a)
+tab:CreateSlider("Wow", 1,256, function(a)
     print(a)
 end)
 
