@@ -24,6 +24,12 @@ local tab3 = Main:CreateTab("Player")
 local modulo1 = loadModule("https://raw.githubusercontent.com/V123VI/roblo/main/module1.lua")
 local moduloplayer = loadModule("https://raw.githubusercontent.com/V123VI/roblo/main/LocalP.lua")
 
+if moduloplayer then
+    print("Modulo Do Player Funcionando")
+else
+    print("Modulo do player nao funciona")
+end
+
 -- Verificar se os módulos foram carregados corretamente
 if not modulo1 then
     warn("Módulo 1 não foi carregado corretamente.")
