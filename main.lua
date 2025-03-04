@@ -42,4 +42,8 @@ tab2:CreateButton("Hello",function()
 print("clicked")
 end)
 
+tab3:CreateToggle("Velocidade",function()
+print('VELOCIDADE ATIVADA')
+end)
+
 tab:Show()
