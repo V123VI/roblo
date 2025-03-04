@@ -21,6 +21,10 @@ function module.aumentarVelocidade(ativado)
 end
 
 -- Função para voar
+-- LocalP.lua
+local module = {}
+
+-- Função para voar
 local flying = false
 local flySpeed = 50 -- Velocidade do voo
 local bodyVelocity = nil
@@ -108,5 +112,6 @@ function module.voar(ativado)
         print("Voar desativado!")
     end
 end
+
 
 return module
