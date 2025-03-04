@@ -1,14 +1,4 @@
-----------------------
----MODULUOS PARA CARREGAR 
 
--- Carregar o módulo ao iniciar o script
-modulo1 = loadModule("https://raw.githubusercontent.com/V123VI/roblo/refs/heads/main/module1.lua")
-
--------Modulo do Player
-
-moduloplayer = loadModule("https://raw.githubusercontent.com/V123VI/roblo/refs/heads/main/LocalP.lua")
-
-------------
 
 -- Função para carregar módulos
 local function loadModule(url)
@@ -33,6 +23,17 @@ local tab2 = Main:CreateTab("Misc")
 local tab3 = Main:CreateTab("Player")
 
 -- Variável para armazenar o módulo carregado
+----------------------
+---MODULUOS PARA CARREGAR 
+
+-- Carregar o módulo ao iniciar o script
+modulo1 = loadModule("https://raw.githubusercontent.com/V123VI/roblo/refs/heads/main/module1.lua")
+
+-------Modulo do Player
+
+moduloplayer = loadModule("https://raw.githubusercontent.com/V123VI/roblo/refs/heads/main/LocalP.lua")
+
+------------
 local modulo1
 
 
