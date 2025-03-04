@@ -18,7 +18,7 @@ local tab = Main:CreateTab("Cheats")
 local tab2 = Main:CreateTab("Misc")
 local tab3 = Main:CreateTab("Player")
 
-tab:CreateButton("Hi",function()
+tab:CreateButton("Zi",function()
 loadModule("https://raw.githubusercontent.com/V123VI/roblo/refs/heads/main/module1.lua")
 end)
 
@@ -42,8 +42,11 @@ tab2:CreateButton("Hello",function()
 print("clicked")
 end)
 
+
 tab3:CreateToggle("Velocidade",function()
 print('VELOCIDADE ATIVADA')
 end)
 
+
 tab:Show()
+
